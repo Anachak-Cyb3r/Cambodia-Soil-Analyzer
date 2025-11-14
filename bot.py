@@ -83,10 +83,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         
         await update.message.reply_text(
-            '🌾 Welcome to Anachak Soil Analyzer!\n'
-            '🌾 សូមស្វាគមន៍មកកាន់ប្រព័ន្ធវិភាគដីអនាចក្រ!\n\n'
-            '🌐 Please choose your language:\n'
-            '🌐 សូមជ្រើសរើសភាសា:',
+            '🌾 Welcome to Anachak Soil Analyzer! / សូមស្វាគមន៍មកកាន់ប្រព័ន្ធវិភាគដីអនាចក្រ!\n\n'
+            '🌐 Please choose your language / សូមជ្រើសរើសភាសា:',
             reply_markup=reply_markup
         )
 
