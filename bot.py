@@ -59,14 +59,36 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context: Callback context
     """
     user_id = update.effective_user.id
-    lang = user_languages.get(user_id, 'en')
     
     logger.info(f"User {user_id} started the bot")
     
-    await update.message.reply_text(
-        get_text(lang, 'welcome'),
-        reply_markup=get_main_menu_keyboard(lang)
-    )
+    # Check if user has already selected a language
+    if user_id in user_languages:
+        # User has language preference, show welcome
+        lang = user_languages[user_id]
+        await update.message.reply_text(
+            get_text(lang, 'welcome'),
+            reply_markup=get_main_menu_keyboard(lang)
+        )
+    else:
+        # New user, show language selection first
+        keyboard = [
+            [KeyboardButton('🇬🇧 English')],
+            [KeyboardButton('🇰🇭 ខ្មែរ')]
+        ]
+        reply_markup = ReplyKeyboardMarkup(
+            keyboard, 
+            one_time_keyboard=True, 
+            resize_keyboard=True
+        )
+        
+        await update.message.reply_text(
+            '🌾 Welcome to Anachak Soil Analyzer!\n'
+            '🌾 សូមស្វាគមន៍មកកាន់ប្រព័ន្ធវិភាគដីអនាចក្រ!\n\n'
+            '🌐 Please choose your language:\n'
+            '🌐 សូមជ្រើសរើសភាសា:',
+            reply_markup=reply_markup
+        )
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
@@ -140,16 +162,18 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if text in ['🇬🇧 English', 'English 🇬🇧', 'English', 'english']:
         user_languages[user_id] = 'en'
         logger.info(f"User {user_id} changed language to English")
+        # Show welcome message after language selection
         await update.message.reply_text(
-            get_text('en', 'language_changed'),
+            get_text('en', 'welcome'),
             reply_markup=get_main_menu_keyboard('en')
         )
     
     elif text in ['🇰🇭 ខ្មែរ', 'ខ្មែរ 🇰🇭', 'ខ្មែរ', 'khmer']:
         user_languages[user_id] = 'km'
         logger.info(f"User {user_id} changed language to Khmer")
+        # Show welcome message after language selection
         await update.message.reply_text(
-            get_text('km', 'language_changed'),
+            get_text('km', 'welcome'),
             reply_markup=get_main_menu_keyboard('km')
         )
     
