@@ -1,0 +1,14 @@
+[Unit]
+Description=Cambodia Soil Analyzer Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=thounghacker
+WorkingDirectory=/home/thounghacker/Desktop/Soil_Detection
+ExecStart=/home/thounghacker/Desktop/Soil_Detection/venv/bin/python /home/thounghacker/Desktop/Soil_Detection/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
