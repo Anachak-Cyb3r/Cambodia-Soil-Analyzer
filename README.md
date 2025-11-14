@@ -1,4 +1,4 @@
-# 🌾 Cambodia Soil Analyzer
+# 🌾 Anachak Soil Analyzer
 
 <div align="center">
 
@@ -18,7 +18,7 @@
 
 ## 🌾 Overview
 
-**Cambodia Soil Analyzer** is an intelligent Telegram bot developed by the **Anachak Cyb3r Team** to revolutionize farming in Cambodia. Our mission is to provide farmers with accessible AI-powered tools that help them make informed decisions about soil quality, crop selection, and fertilizer usage.
+**Anachak Soil Analyzer** is an intelligent Telegram bot developed by the **Anachak Cyb3r Team** to revolutionize farming in Cambodia. Our mission is to provide farmers with accessible AI-powered tools that help them make informed decisions about soil quality, crop selection, and fertilizer usage.
 
 This bot uses advanced AI technology to analyze soil photos and provide instant, expert recommendations in both Khmer and English, making agricultural knowledge accessible to all Cambodian farmers.
 
@@ -53,8 +53,8 @@ This bot uses advanced AI technology to analyze soil photos and provide instant,
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Anachak-Cyb3r/Cambodia-Soil-Analyzer.git
-   cd Cambodia-Soil-Analyzer
+   git clone https://github.com/Anachak-Cyb3r/Anachak-Soil-Analyzer.git
+   cd Anachak-Soil-Analyzer
    ```
 
 2. **Create a virtual environment**
@@ -130,7 +130,7 @@ The bot recognizes 5 main Cambodian soil types:
 ## 📁 Project Structure
 
 ```
-Cambodia-Soil-Analyzer/
+Anachak-Soil-Analyzer/
 ├── bot.py                          # Main bot application
 ├── soil_analyzer.py                # AI soil analysis logic
 ├── translations.py                 # Bilingual translations (Khmer/English)
@@ -262,7 +262,7 @@ To make farming **smarter, easier, and more sustainable** by combining **AI and 
 ## 📞 Support
 
 For support, questions, or feedback:
-- Open an issue on [GitHub Issues](https://github.com/Anachak-Cyb3r/Cambodia-Soil-Analyzer/issues)
+- Open an issue on [GitHub Issues](https://github.com/Anachak-Cyb3r/Anachak-Soil-Analyzer/issues)
 - Contact the Anachak Cyb3r Team
 
 ---
